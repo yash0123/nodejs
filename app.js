@@ -4,7 +4,7 @@ const express = require('express')
 const axios = require('axios')
 const cheerio = require('cheerio')
 const hostname='192.168.137.1'
-const port='3000'
+const port=process.env.PORT || 3000
 //init app & middleware
 const app=express()
 app.use(express.json())
@@ -13,7 +13,7 @@ let db
 connectToDb((err)=>{
 if(!err){
 
-    app.listen(port ,hostname, ()=>{
+    app.listen(port , ()=>{
         console.log('app listening on port 3000')
     })
 db=getDb()    
