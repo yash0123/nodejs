@@ -1,10 +1,11 @@
 const { ObjectId}=require('mongodb')
 const { connectToDb,getDb}=require('./db')
 const express = require('express')
+require("dotenv").config()
 const axios = require('axios')
 const cheerio = require('cheerio')
 const hostname='192.168.137.1'
-const port=process.env.PORT || 3000
+const port=process.env.PORT 
 //init app & middleware
 const app=express()
 app.use(express.json())
